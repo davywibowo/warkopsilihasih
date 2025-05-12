@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth transition">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warkop Bandung</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gray-100 dark:bg-gray-900 font-sans text-gray-800 dark:text-gray-100 transition-colors duration-8000"
+    style="
+      background-image: url('https://media.suara.com/pictures/653x366/2021/10/04/79941-potret-lawas-warkop-dki.jpg');
+      background-size: cover;
+      background-position: center;
+    "
+  >
+    <!-- Navbar -->
+    <nav
+      class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-10 transition-colors duration-300"
+    >
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a
+          href="#"
+          class="ml-4 text-2xl font-bold text-yellow-800 dark:text-yellow-300 hover:text-yellow-900 dark:hover:text-yellow-100 transition"
+        >
+          Warkop Bandung
+        </a>
+        <div class="flex items-center space-x-4">
+          <a
+            href="#menu"
+            class="text-gray-700 dark:text-gray-200 hover:text-yellow-700 dark:hover:text-yellow-400"
+            >Menu</a
+          >
+          <a
+            href="#about"
+            class="text-gray-700 dark:text-gray-200 hover:text-yellow-700 dark:hover:text-yellow-400"
+            >Tentang</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 dark:text-gray-200 hover:text-yellow-700 dark:hover:text-yellow-400"
+            >Kontak</a
+          >
+          <button
+            id="darkToggle"
+            class="text-xl ml-4 focus:outline-none text-yellow-800 dark:text-yellow-200 transition"
+          >
+            🌙
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section
+      class="h-screen flex items-center justify-center bg-yellow-100 dark:bg-gray-900 pt-20 transition-colors duration-300"
+    >
+      <div class="text-center px-6">
+        <h2
+          class="text-4xl md:text-5xl font-bold text-yellow-900 dark:text-yellow-200"
+        >
+          Ngopi Nyaman, Santai di Warkop
+        </h2>
+        <p class="mt-4 text-gray-700 dark:text-gray-300 text-lg">
+          Warkopnya barudak bandung, enakeunnnn....
+        </p>
+        <a
+          href="#menu"
+          class="mt-6 inline-block bg-yellow-700 text-white py-2 px-6 rounded hover:bg-yellow-800 transition"
+        >
+          Lihat Menu
+        </a>
+      </div>
+    </section>
+
+    <!-- Menu -->
+    <section
+      id="menu"
+      class="py-16 bg-yellow-50 dark:bg-gray-800 transition-colors duration-300"
+    >
+      <div class="container mx-auto px-4">
+        <h3
+          class="text-3xl font-bold text-center text-yellow-900 dark:text-yellow-300 mb-10"
+        >
+          Menu Kami
+        </h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-yellow-100 dark:bg-gray-700 p-6 rounded shadow">
+            <h4
+              class="text-xl font-semibold text-yellow-800 dark:text-yellow-200 mb-4"
+            >
+              Kopi
+            </h4>
+            <ul class="space-y-2">
+              <li>☕ Kopi Hitam - Rp10.000</li>
+              <li>☕ Kopi Susu - Rp12.000</li>
+              <li>☕ Cappuccino - Rp15.000</li>
+              <li>☕ Dalgona - Rp5.000</li>
+              <li>☕ Es Kopi Gula Aren - Rp14.000</li>
+            </ul>
+          </div>
+          <div class="bg-yellow-100 dark:bg-gray-700 p-6 rounded shadow">
+            <h4
+              class="text-xl font-semibold text-yellow-800 dark:text-yellow-200 mb-4"
+            >
+              Menu tambahan
+            </h4>
+            <ul class="space-y-2">
+              <li>🍣 Sosis Bakar - Rp10.000</li>
+              <li>🍌 Pisang Bakar - Rp12.000</li>
+              <li>🍲 Bubur Kacang Ijo - Rp15.000</li>
+            </ul>
+          </div>
+          <div class="bg-yellow-100 dark:bg-gray-700 p-6 rounded shadow">
+            <h4
+              class="text-xl font-semibold text-yellow-800 dark:text-yellow-200 mb-4"
+            >
+              Makanan
+            </h4>
+            <ul class="space-y-2">
+              <li>🍞 Roti Bakar Coklat - Rp10.000</li>
+              <li>🍗 Mie Goreng Spesial - Rp13.000</li>
+              <li>🍟 Kentang Goreng - Rp12.000</li>
+              <li>🍳 Telur Dadar - Rp8.000</li>
+            </ul>
+          </div>
+          <div class="bg-yellow-100 dark:bg-gray-700 p-6 rounded shadow">
+            <h4
+              class="text-xl font-semibold text-yellow-800 dark:text-yellow-200 mb-4"
+            >
+              Cemilan
+            </h4>
+            <ul class="space-y-2">
+              <li>🍩 Donat - Rp5.000</li>
+              <li>🍘 Keripik Singkong - Rp6.000</li>
+              <li>🥜 Kacang Goreng - Rp7.000</li>
+              <li>🥠 Pisang Goreng - Rp9.000</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang -->
+    <section
+      id="about"
+      class="py-16 bg-yellow-100 dark:bg-gray-900 transition-colors duration-300"
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h3
+          class="text-3xl font-bold text-yellow-900 dark:text-yellow-300 mb-6"
+        >
+          Tentang Kami
+        </h3>
+        <p class="max-w-2xl mx-auto">
+          Warkop bandung didirikan pada 1870 dimana dulu para penjajah sering
+          ngopi di sini, berbagai jenis kopi dan makanan ringan dengan harga
+          terjangkau. Cocok buat kamu yang pengen ngobrol santai, kerja remote,
+          atau sekadar ngopi sore bareng temen.
+        </p>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section
+      class="py-16 bg-yellow-50 dark:bg-gray-700 transition-colors duration-300"
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h3
+          class="text-3xl font-bold text-yellow-900 dark:text-yellow-300 mb-6"
+        >
+          Video Suasana Warkop
+        </h3>
+        <div class="relative w-full max-w-4xl mx-auto">
+          <video
+            class="w-full max-w-full h-auto rounded shadow"
+            controls
+            autoplay
+            muted
+          >
+            <source src="/assets/warkop.mp4" type="video/mp4" />
+            Browser tidak mendukung pemutaran video.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section
+      id="contact"
+      class="py-16 bg-yellow-50 dark:bg-gray-800 transition-colors duration-300"
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h3
+          class="text-3xl font-bold text-center text-yellow-900 dark:text-yellow-300 mb-6"
+        >
+          Kontak Kami
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-6">
+          Punya pertanyaan atau ingin pesan duluan? Klik tombol di bawah ini:
+        </p>
+        <a
+          href="https://api.whatsapp.com/send?phone=6288707746912&text=Halo%20Assalamualaikum"
+          target="_blank"
+          class="inline-block bg-green-500 text-white py-3 px-6 rounded-full text-lg hover:bg-green-600 transition"
+        >
+          Chat via WhatsApp
+        </a>
+
+        <!-- Google Maps Link -->
+        <div class="mt-10">
+          <h4
+            class="text-xl font-semibold text-yellow-900 dark:text-yellow-300 mb-4"
+          >
+            Temukan Kami di Google Maps
+          </h4>
+          <a
+            href="https://www.google.com/maps?q=-6.411171859009229, 106.77681206730817"
+            target="_blank"
+            class="inline-block bg-red-500 text-white py-3 px-6 rounded-full text-lg hover:bg-pink-600 transition"
+          >
+            Lihat Lokasi Kami
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Pemesanan -->
+    <section
+      class="py-16 bg-yellow-50 dark:bg-gray-900 text-center animate-fadeIn"
+    >
+      <h3 class="text-3xl font-bold mb-6 text-yellow-800 dark:text-yellow-300">
+        Pesan Sekarang
+      </h3>
+      <form class="mt-6 space-y-4 text-left max-w-md mx-auto">
+        <input
+          type="text"
+          placeholder="Nama"
+          class="w-full p-2 rounded bg-white dark:bg-gray-700 border"
+        />
+        <input
+          type="text"
+          placeholder="Pesanan"
+          class="w-full p-2 rounded bg-white dark:bg-gray-700 border"
+        />
+        <a
+          href="#"
+          onclick="sendOrder()"
+          class="bg-green-500 text-white py-2 px-4 rounded block text-center hover:bg-green-600"
+        >
+          Kirim via WhatsApp
+        </a>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-yellow-800 dark:bg-gray-900 text-white text-center py-4 transition-colors duration-300"
+    >
+      <p>&copy; 2025 Warkop Bandung. Made by Aldi Gallagher.</p>
+    </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+      const toggleBtn = document.getElementById("darkToggle");
+      const html = document.documentElement;
+
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        html.classList.add("dark");
+        toggleBtn.textContent = "🌞";
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        html.classList.toggle("dark");
+        if (html.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
+          toggleBtn.textContent = "🌞";
+        } else {
+          localStorage.setItem("theme", "light");
+          toggleBtn.textContent = "🌙";
+        }
+      });
+
+      function sendOrder() {
+        const name = document.querySelector('input[placeholder="Nama"]').value;
+        const order = document.querySelector(
+          'input[placeholder="Pesanan"]'
+        ).value;
+        const msg = `Halo saya ${name}, mau pesan: ${order}`;
+        const url = `https://api.whatsapp.com/send?phone=6288707746912&text=${encodeURIComponent(
+          msg
+        )}`;
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>
+
+<!-- style="
+        background-image: url('https://media.suara.com/pictures/653x366/2021/10/04/79941-potret-lawas-warkop-dki.jpg');
+        background-size: cover;
+        background-position: center;
+      " -->
