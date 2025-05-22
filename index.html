@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Warkop Bandung</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/logo naiya.png"
+      sizes="64x64"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -12,9 +18,9 @@
     </script>
   </head>
   <body
-    class="bg-gray-100 dark:bg-gray-900 font-sans text-gray-800 dark:text-gray-100 transition-colors duration-8000"
+    class="bg-gray-100 dark:bg-gray-900 font-sans text-gray-800 dark:text-gray-100 transition-colors duration-1000"
     style="
-      background-image: url('https://media.suara.com/pictures/653x366/2021/10/04/79941-potret-lawas-warkop-dki.jpg');
+      background-image: url('https://www.uhdpaper.com/files/full/2330x.jpg');
       background-size: cover;
       background-position: center;
     "
@@ -26,31 +32,44 @@
       <div
         class="container mx-auto px-4 py-3 flex justify-between items-center"
       >
-        <a
-          href="#"
-          class="ml-4 text-2xl font-bold text-yellow-800 dark:text-yellow-300 hover:text-yellow-900 dark:hover:text-yellow-100 transition"
-        >
-          Warkop Bandung
-        </a>
-        <div class="flex items-center space-x-4">
+        <!-- Kiri: Logo + Judul -->
+        <div class="flex items-center space-x-2">
+          <img
+            src="/assets/logo naiya.png"
+            alt="Logo"
+            class="w-8 h-8 rounded-full"
+          />
+          <a
+            href="#"
+            class="text-xl font-bold text-yellow-900 dark:text-yellow-300 hover:text-yellow-700 dark:hover:text-yellow-200 transition"
+          >
+            Warkop Silih Asih
+          </a>
+        </div>
+
+        <!-- Kanan: Menu Navigasi -->
+        <div class="flex items-center space-x-6">
           <a
             href="#menu"
-            class="text-gray-700 dark:text-gray-200 hover:text-yellow-700 dark:hover:text-yellow-400"
-            >Menu</a
+            class="text-gray-700 dark:text-gray-200 hover:text-yellow-700 dark:hover:text-yellow-400 transition"
           >
+            Menu
+          </a>
           <a
             href="#about"
-            class="text-gray-700 dark:text-gray-200 hover:text-yellow-700 dark:hover:text-yellow-400"
-            >Tentang</a
+            class="text-gray-700 dark:text-gray-200 hover:text-yellow-700 dark:hover:text-yellow-400 transition"
           >
+            Tentang
+          </a>
           <a
             href="#contact"
-            class="text-gray-700 dark:text-gray-200 hover:text-yellow-700 dark:hover:text-yellow-400"
-            >Kontak</a
+            class="text-gray-700 dark:text-gray-200 hover:text-yellow-700 dark:hover:text-yellow-400 transition"
           >
+            Kontak
+          </a>
           <button
             id="darkToggle"
-            class="text-xl ml-4 focus:outline-none text-yellow-800 dark:text-yellow-200 transition"
+            class="text-xl focus:outline-none text-yellow-800 dark:text-yellow-200 transition"
           >
             🌙
           </button>
@@ -60,16 +79,18 @@
 
     <!-- Hero -->
     <section
-      class="h-screen flex items-center justify-center bg-yellow-100 dark:bg-gray-900 pt-20 transition-colors duration-300"
+      class="h-screen flex items-center justify-center bg-yellow-100 dark:bg-gray-900 pt-20 transition-colors duration-300 bg-cover bg-center"
     >
-      <div class="text-center px-6">
+      <div
+        class="text-center px-6 bg-white/70 dark:bg-black/50 p-8 rounded-xl shadow-lg"
+      >
         <h2
           class="text-4xl md:text-5xl font-bold text-yellow-900 dark:text-yellow-200"
         >
-          Ngopi Nyaman, Santai di Warkop
+          Bukan Warkop Biasa, Ini Basecamp Mahasiswa
         </h2>
         <p class="mt-4 text-gray-700 dark:text-gray-300 text-lg">
-          Warkopnya barudak bandung, enakeunnnn....
+          Harga Bersahabat, Rasa Tetap Berarti...
         </p>
         <a
           href="#menu"
@@ -91,59 +112,28 @@
         >
           Menu Kami
         </h3>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-yellow-100 dark:bg-gray-700 p-6 rounded shadow">
-            <h4
-              class="text-xl font-semibold text-yellow-800 dark:text-yellow-200 mb-4"
-            >
-              Kopi
-            </h4>
-            <ul class="space-y-2">
-              <li>☕ Kopi Hitam - Rp10.000</li>
-              <li>☕ Kopi Susu - Rp12.000</li>
-              <li>☕ Cappuccino - Rp15.000</li>
-              <li>☕ Dalgona - Rp5.000</li>
-              <li>☕ Es Kopi Gula Aren - Rp14.000</li>
-            </ul>
-          </div>
-          <div class="bg-yellow-100 dark:bg-gray-700 p-6 rounded shadow">
-            <h4
-              class="text-xl font-semibold text-yellow-800 dark:text-yellow-200 mb-4"
-            >
-              Menu tambahan
-            </h4>
-            <ul class="space-y-2">
-              <li>🍣 Sosis Bakar - Rp10.000</li>
-              <li>🍌 Pisang Bakar - Rp12.000</li>
-              <li>🍲 Bubur Kacang Ijo - Rp15.000</li>
-            </ul>
-          </div>
-          <div class="bg-yellow-100 dark:bg-gray-700 p-6 rounded shadow">
-            <h4
-              class="text-xl font-semibold text-yellow-800 dark:text-yellow-200 mb-4"
-            >
-              Makanan
-            </h4>
-            <ul class="space-y-2">
-              <li>🍞 Roti Bakar Coklat - Rp10.000</li>
-              <li>🍗 Mie Goreng Spesial - Rp13.000</li>
-              <li>🍟 Kentang Goreng - Rp12.000</li>
-              <li>🍳 Telur Dadar - Rp8.000</li>
-            </ul>
-          </div>
-          <div class="bg-yellow-100 dark:bg-gray-700 p-6 rounded shadow">
-            <h4
-              class="text-xl font-semibold text-yellow-800 dark:text-yellow-200 mb-4"
-            >
-              Cemilan
-            </h4>
-            <ul class="space-y-2">
-              <li>🍩 Donat - Rp5.000</li>
-              <li>🍘 Keripik Singkong - Rp6.000</li>
-              <li>🥜 Kacang Goreng - Rp7.000</li>
-              <li>🥠 Pisang Goreng - Rp9.000</li>
-            </ul>
-          </div>
+
+        <!-- gambar menu -->
+        <div class="flex justify-center mt-10">
+          <img
+            src="/assets/menu naiya.jpg"
+            alt="Menu Warkop"
+            class="w-64 rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:scale-105"
+            onclick="openModal(this.src)"
+          />
+        </div>
+
+        <!-- modal -->
+        <!-- Modal -->
+        <div
+          id="imageModal"
+          class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 hidden"
+          onclick="closeModal()"
+        >
+          <img
+            id="modalImage"
+            class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg"
+          />
         </div>
       </div>
     </section>
@@ -160,16 +150,40 @@
           Tentang Kami
         </h3>
         <p class="max-w-2xl mx-auto">
-          Warkop bandung didirikan pada 1870 dimana dulu para penjajah sering
-          ngopi di sini, berbagai jenis kopi dan makanan ringan dengan harga
-          terjangkau. Cocok buat kamu yang pengen ngobrol santai, kerja remote,
-          atau sekadar ngopi sore bareng temen.
+          Warkop Silih Asih berdiri sejak 2023 dan berlokasi di Sukabirus,
+          Telkom University. Kami hadir sebagai tempat makan dan ngopi yang
+          terjangkau untuk mahasiswa dan warga sekitar. Menyediakan berbagai
+          pilihan makanan dan minuman yang sederhana namun nikmat, cocok untuk
+          nongkrong, nugas, atau sekadar istirahat sejenak.
         </p>
       </div>
     </section>
 
     <!-- Video Section -->
     <section
+      class="py-16 bg-yellow-50 dark:bg-gray-800 transition-colors duration-300"
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h3
+          class="text-3xl font-bold text-yellow-900 dark:text-yellow-300 mb-6"
+        >
+          Video Suasana Warkop
+        </h3>
+        <div class="relative w-full max-w-4xl mx-auto aspect-video">
+          <iframe
+            class="w-full h-full rounded shadow"
+            src="https://www.youtube.com/embed/9B6AxxYTw3A?start=551s?autoplay=1&mute=1&controls=1"
+            title="Video Suasana Warkop"
+            frameborder="0"
+            allow="autoplay; encrypted-media; fullscreen"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- video -->
+    <!-- <section
       class="py-16 bg-yellow-50 dark:bg-gray-700 transition-colors duration-300"
     >
       <div class="container mx-auto px-4 text-center">
@@ -190,7 +204,7 @@
           </video>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Kontak -->
     <section
@@ -207,22 +221,37 @@
           Punya pertanyaan atau ingin pesan duluan? Klik tombol di bawah ini:
         </p>
         <a
-          href="https://api.whatsapp.com/send?phone=6288707746912&text=Halo%20Assalamualaikum"
+          href="https://api.whatsapp.com/send?phone=6282115543575&text=Halo👋%20Selamat%20datang%20di%20Warkop%20Silih%20Asih.☕🍞%20Mau%20Pesan%20apa%20hari%20ini?
+"
           target="_blank"
           class="inline-block bg-green-500 text-white py-3 px-6 rounded-full text-lg hover:bg-green-600 transition"
         >
           Chat via WhatsApp
         </a>
 
+        <!-- instagram -->
+        <div class="mt-10 text-center">
+          <p class="text-gray-700 dark:text-gray-300 mb-6 text-2xl">
+            Social Media:
+          </p>
+          <a
+            href="https://www.instagram.com/warkop_silihasih?igsh=MXF3YnU0czl3cWF3bg=="
+            target="_blank"
+            class="inline-block bg-purple-500 text-white py-3 px-6 rounded-full text-lg hover:bg-pink-600 transition"
+          >
+            Instagram
+          </a>
+        </div>
+
         <!-- Google Maps Link -->
-        <div class="mt-10">
+        <div class="mt-10 text-center">
           <h4
-            class="text-xl font-semibold text-yellow-900 dark:text-yellow-300 mb-4"
+            class="text-xl font-semibold text-yellow-900 dark:text-yellow-300 mb-4 text-center"
           >
             Temukan Kami di Google Maps
           </h4>
           <a
-            href="https://www.google.com/maps?q=-6.411171859009229, 106.77681206730817"
+            href="https://maps.app.goo.gl/7wr8UHh6n38uN4zg9"
             target="_blank"
             class="inline-block bg-red-500 text-white py-3 px-6 rounded-full text-lg hover:bg-pink-600 transition"
           >
@@ -239,32 +268,51 @@
       <h3 class="text-3xl font-bold mb-6 text-yellow-800 dark:text-yellow-300">
         Pesan Sekarang
       </h3>
-      <form class="mt-6 space-y-4 text-left max-w-md mx-auto">
+      <form
+        class="mt-6 space-y-4 text-left max-w-md mx-auto"
+        onsubmit="sendOrder(event)"
+      >
         <input
           type="text"
+          id="nama"
           placeholder="Nama"
           class="w-full p-2 rounded bg-white dark:bg-gray-700 border"
+          required
         />
         <input
           type="text"
+          id="pesanan"
           placeholder="Pesanan"
           class="w-full p-2 rounded bg-white dark:bg-gray-700 border"
+          required
         />
-        <a
-          href="#"
-          onclick="sendOrder()"
-          class="bg-green-500 text-white py-2 px-4 rounded block text-center hover:bg-green-600"
+        <input
+          type="text"
+          id="antarKe"
+          placeholder="Antar Ke"
+          class="w-full p-2 rounded bg-white dark:bg-gray-700 border"
+          required
+        />
+        <input
+          type="text"
+          id="catatan"
+          placeholder="Catatan"
+          class="w-full p-2 rounded bg-white dark:bg-gray-700 border"
+        />
+        <button
+          type="submit"
+          class="bg-green-500 text-white py-2 px-4 rounded block text-center hover:bg-green-600 w-full"
         >
           Kirim via WhatsApp
-        </a>
+        </button>
       </form>
     </section>
 
     <!-- Footer -->
     <footer
-      class="bg-yellow-800 dark:bg-gray-900 text-white text-center py-4 transition-colors duration-300"
+      class="bg-yellow-800 dark:bg-black text-white text-center py-4 transition-colors duration-300"
     >
-      <p>&copy; 2025 Warkop Bandung. Made by Aldi Gallagher.</p>
+      <p>&copy; 2025 Warkop Sili Asih.</p>
     </footer>
 
     <!-- Dark Mode Script -->
@@ -291,24 +339,102 @@
           toggleBtn.textContent = "🌙";
         }
       });
+      // form pemesanan
 
       function sendOrder() {
-        const name = document.querySelector('input[placeholder="Nama"]').value;
-        const order = document.querySelector(
-          'input[placeholder="Pesanan"]'
-        ).value;
-        const msg = `Halo saya ${name}, mau pesan: ${order}`;
-        const url = `https://api.whatsapp.com/send?phone=6288707746912&text=${encodeURIComponent(
-          msg
+        event.preventDefault();
+        const name = document.getElementById("nama").value;
+        const order = document.getElementById("pesanan").value;
+        const address = document.getElementById("antarKe").value;
+        const notes = document.getElementById("catatan").value;
+
+        const greeting = `Halo! 👋
+Selamat datang di Warkop Silih Asih. ☕🍞
+Mau pesan apa hari ini?\n`;
+
+        const orderDetails = `
+Nama: ${name}
+Pesanan: ${order}
+Alamat: ${address}
+Notes (Optional): ${notes}
+
+Kami siap melayani kamu dari jam 08.00 - 22.00 🕗`;
+
+        const finalMessage = `${greeting}${orderDetails}`;
+
+        const url = `https://api.whatsapp.com/send?phone=6281316511411&text=${encodeURIComponent(
+          finalMessage
         )}`;
+        document.querySelector("form").reset();
         window.open(url, "_blank");
+      }
+
+      //popup
+      function openModal(src) {
+        document.getElementById("modalImage").src = src;
+        document.getElementById("imageModal").classList.remove("hidden");
+        document.addEventListener("keydown", escClose);
+      }
+
+      function closeModal() {
+        document.getElementById("imageModal").classList.add("hidden");
+        document.removeEventListener("keydown", escClose);
+      }
+
+      function escClose(event) {
+        if (event.key === "Escape") {
+          closeModal();
+        }
       }
     </script>
   </body>
 </html>
 
-<!-- style="
-        background-image: url('https://media.suara.com/pictures/653x366/2021/10/04/79941-potret-lawas-warkop-dki.jpg');
-        background-size: cover;
-        background-position: center;
-      " -->
+<!-- kalau mau pake youtube -->
+<!-- <section
+  class="py-16 bg-yellow-50 dark:bg-gray-700 transition-colors duration-300"
+>
+  <div class="container mx-auto px-4 text-center">
+    <h3 class="text-3xl font-bold text-yellow-900 dark:text-yellow-300 mb-6">
+      Video Suasana Warkop
+    </h3>
+    <div class="relative w-full max-w-4xl mx-auto aspect-video">
+      <iframe
+        class="w-full h-full rounded shadow"
+        src="https://www.youtube.com/embed/Fg7WCAyBhrU?start=551s?autoplay=1&mute=1&controls=1"
+        title="Video Suasana Warkop"
+        frameborder="0"
+        allow="autoplay; encrypted-media; fullscreen"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section
+        class="py-16 bg-yellow-50 dark:bg-gray-700 transition-colors duration-300"
+      >
+        <div class="container mx-auto px-4 text-center">
+          <h3
+            class="text-3xl font-bold text-yellow-900 dark:text-yellow-300 mb-6"
+          >
+            Video Suasana Warkop
+          </h3>
+          <div class="relative w-full max-w-4xl mx-auto">
+            <video
+              class="w-full max-w-full h-auto rounded shadow"
+              controls
+              autoplay
+              muted
+            >
+              <source src="/assets/warkop.mp4" type="video/mp4" />
+              Browser tidak mendukung pemutaran video.
+            </video>
+          </div>
+        </div>
+      </section> -->
+
+<!--notes-->
+<!-- logo di head -->
+<!-- foto menu di section menu dan pop up -->
+<!-- instagram -->
