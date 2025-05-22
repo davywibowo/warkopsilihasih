@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth transition">
+<html lang="id" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Warkop Bandung</title>
+    <title>Warkop Silih Asih - Basecamp Mahasiswa</title>
     <link
       rel="icon"
       type="image/png"
@@ -11,312 +11,1067 @@
       sizes="64x64"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
     <script>
       tailwind.config = {
         darkMode: "class",
+        theme: {
+          extend: {
+            animation: {
+              "fade-in-up": "fadeInUp 0.8s ease-out",
+              "fade-in-down": "fadeInDown 0.8s ease-out",
+              float: "float 3s ease-in-out infinite",
+              "pulse-slow": "pulse 3s infinite",
+              "bounce-gentle": "bounceGentle 2s infinite",
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(30px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              fadeInDown: {
+                "0%": { opacity: "0", transform: "translateY(-30px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+              bounceGentle: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-5px)" },
+              },
+            },
+          },
+        },
       };
     </script>
+    <style>
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #b45309;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #92400e;
+      }
+
+      /* Glassmorphism effect */
+      .glass {
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.125);
+      }
+
+      .glass-dark {
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(17, 24, 39, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.125);
+      }
+
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(135deg, #f59e0b, #d97706, #b45309);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Hero background animation */
+      .hero-bg {
+        background: linear-gradient(-45deg, #fef3c7, #fed7aa, #fde68a, #fcd34d);
+        background-size: 400% 400%;
+        animation: gradientShift 8s ease infinite;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Card hover effects */
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+    </style>
   </head>
   <body
-    class="bg-gray-100 dark:bg-gray-900 font-sans text-gray-800 dark:text-gray-100 transition-colors duration-1000"
-    style="
-      background-image: url('https://www.uhdpaper.com/files/full/2330x.jpg');
-      background-size: cover;
-      background-position: center;
-    "
+    class="bg-gray-50 dark:bg-gray-900 font-sans text-gray-800 dark:text-gray-100 transition-all duration-500"
   >
     <!-- Navbar -->
     <nav
-      class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-10 transition-colors duration-300"
+      id="navbar"
+      class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md shadow-lg fixed w-full z-40 transition-all duration-300"
     >
       <div
         class="container mx-auto px-4 py-3 flex justify-between items-center"
       >
-        <!-- Kiri: Logo + Judul -->
-        <div class="flex items-center space-x-2">
-          <img
-            src="/assets/logo naiya.png"
-            alt="Logo"
-            class="w-8 h-8 rounded-full"
-          />
+        <!-- Logo & Title -->
+        <div class="flex items-center space-x-3 animate-fade-in-down">
+          <div class="relative">
+            <img
+              src="assets/logo naiya.png"
+              alt="Logo"
+              class="w-10 h-10 rounded-full animate-float"
+            />
+          </div>
           <a
-            href="#"
-            class="text-xl font-bold text-yellow-900 dark:text-yellow-300 hover:text-yellow-700 dark:hover:text-yellow-200 transition"
+            href="#home"
+            class="text-xl font-bold gradient-text hover:scale-105 transition-transform"
           >
             Warkop Silih Asih
           </a>
         </div>
 
-        <!-- Kanan: Menu Navigasi -->
-        <div class="flex items-center space-x-6">
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a
+            href="#home"
+            class="nav-link text-gray-700 dark:text-gray-200 hover:text-yellow-600 dark:hover:text-yellow-400 transition-all duration-300 relative group"
+          >
+            <i class="fas fa-home mr-2"></i>Home
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-600 transition-all group-hover:w-full"
+            ></span>
+          </a>
           <a
             href="#menu"
-            class="text-gray-700 dark:text-gray-200 hover:text-yellow-700 dark:hover:text-yellow-400 transition"
+            class="nav-link text-gray-700 dark:text-gray-200 hover:text-yellow-600 dark:hover:text-yellow-400 transition-all duration-300 relative group"
           >
-            Menu
+            <i class="fas fa-utensils mr-2"></i>Menu
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-600 transition-all group-hover:w-full"
+            ></span>
           </a>
           <a
             href="#about"
-            class="text-gray-700 dark:text-gray-200 hover:text-yellow-700 dark:hover:text-yellow-400 transition"
+            class="nav-link text-gray-700 dark:text-gray-200 hover:text-yellow-600 dark:hover:text-yellow-400 transition-all duration-300 relative group"
           >
-            Tentang
+            <i class="fas fa-info-circle mr-2"></i>Tentang
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-600 transition-all group-hover:w-full"
+            ></span>
           </a>
           <a
             href="#contact"
-            class="text-gray-700 dark:text-gray-200 hover:text-yellow-700 dark:hover:text-yellow-400 transition"
+            class="nav-link text-gray-700 dark:text-gray-200 hover:text-yellow-600 dark:hover:text-yellow-400 transition-all duration-300 relative group"
           >
-            Kontak
+            <i class="fas fa-phone mr-2"></i>Kontak
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-600 transition-all group-hover:w-full"
+            ></span>
           </a>
           <button
             id="darkToggle"
-            class="text-xl focus:outline-none text-yellow-800 dark:text-yellow-200 transition"
+            class="text-2xl focus:outline-none text-yellow-800 dark:text-yellow-200 hover:scale-110 transition-transform"
           >
-            🌙
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:inline"></i>
           </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden text-gray-700 dark:text-gray-200"
+        >
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="absolute top-0 left-0 w-full md:hidden bg-white dark:bg-gray-800 shadow-lg z-50 transform -translate-y-full hidden transition-transform duration-300"
+      >
+        <div class="px-4 py-2 space-y-2">
+          <a
+            href="#home"
+            class="block py-2 text-gray-700 dark:text-gray-200 hover:text-yellow-600"
+          >
+            <i class="fas fa-home mr-2"></i>Home
+          </a>
+          <a
+            href="#menu"
+            class="block py-2 text-gray-700 dark:text-gray-200 hover:text-yellow-600"
+          >
+            <i class="fas fa-utensils mr-2"></i>Menu
+          </a>
+          <a
+            href="#about"
+            class="block py-2 text-gray-700 dark:text-gray-200 hover:text-yellow-600"
+          >
+            <i class="fas fa-info-circle mr-2"></i>Tentang
+          </a>
+          <a
+            href="#contact"
+            class="block py-2 text-gray-700 dark:text-gray-200 hover:text-yellow-600"
+          >
+            <i class="fas fa-phone mr-2"></i>Kontak
+          </a>
         </div>
       </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section
-      class="h-screen flex items-center justify-center bg-yellow-100 dark:bg-gray-900 pt-20 transition-colors duration-300 bg-cover bg-center"
+      id="home"
+      class="min-h-screen flex items-center justify-center hero-bg relative overflow-hidden pt-24 md:pt-20"
     >
+      <!-- Floating elements -->
+
+      <div class="text-center px-6 max-w-4xl mx-auto">
+        <div
+          class="glass dark:glass-dark p-8 md:p-12 rounded-3xl shadow-2xl animate-fade-in-up"
+        >
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            <span class="gradient-text">Bukan Warkop Biasa,</span><br />
+            <span class="text-gray-800 dark:text-white"
+              >Ini Basecamp Mahasiswa</span
+            >
+          </h1>
+          <p
+            class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 animate-fade-in-up"
+            style="animation-delay: 0.2s"
+          >
+            <i class="fas fa-heart text-red-500 mr-2"></i>
+            Harga Bersahabat, Rasa Tetap Berarti...
+          </p>
+
+          <!-- CTA Buttons -->
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up"
+            style="animation-delay: 0.4s"
+          >
+            <a
+              href="#menu"
+              class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white py-4 px-8 rounded-full hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              <i class="fas fa-utensils mr-2"></i>Lihat Menu
+            </a>
+            <a
+              href="#contact"
+              class="border-2 border-yellow-600 text-yellow-600 dark:text-yellow-400 py-4 px-8 rounded-full hover:bg-yellow-600 hover:text-white transition-all duration-300 transform hover:scale-105"
+            >
+              <i class="fas fa-phone mr-2"></i>Pesan Sekarang
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div
+            class="grid grid-cols-3 gap-4 mt-12 animate-fade-in-up"
+            style="animation-delay: 0.6s"
+          >
+            <div class="text-center">
+              <div
+                class="text-2xl md:text-3xl font-bold text-yellow-600"
+                id="happyCustomers"
+              >
+                0
+              </div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">
+                Pelanggan Senang
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl md:text-3xl font-bold text-yellow-600">
+                2023
+              </div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">
+                Berdiri Sejak
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl md:text-3xl font-bold text-yellow-600">
+                08-22
+              </div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">
+                Jam Buka
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
       <div
-        class="text-center px-6 bg-white/70 dark:bg-black/50 p-8 rounded-xl shadow-lg"
+        id="scrollToMenu"
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle cursor-pointer"
       >
-        <h2
-          class="text-4xl md:text-5xl font-bold text-yellow-900 dark:text-yellow-200"
+        <div
+          class="w-6 h-10 border-2 border-yellow-600 rounded-full flex justify-center"
         >
-          Bukan Warkop Biasa, Ini Basecamp Mahasiswa
-        </h2>
-        <p class="mt-4 text-gray-700 dark:text-gray-300 text-lg">
-          Harga Bersahabat, Rasa Tetap Berarti...
-        </p>
-        <a
-          href="#menu"
-          class="mt-6 inline-block bg-yellow-700 text-white py-2 px-6 rounded hover:bg-yellow-800 transition"
-        >
-          Lihat Menu
-        </a>
+          <div
+            class="w-1 h-3 bg-yellow-600 rounded-full mt-2 animate-pulse"
+          ></div>
+        </div>
       </div>
     </section>
 
-    <!-- Menu -->
+    <!-- Menu Section -->
     <section
       id="menu"
-      class="py-16 bg-yellow-50 dark:bg-gray-800 transition-colors duration-300"
+      class="py-20 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300"
     >
       <div class="container mx-auto px-4">
-        <h3
-          class="text-3xl font-bold text-center text-yellow-900 dark:text-yellow-300 mb-10"
-        >
-          Menu Kami
-        </h3>
-
-        <!-- gambar menu -->
-        <div class="flex justify-center mt-10">
-          <img
-            src="assets/menu naiya.jpg"
-            alt="Menu Warkop"
-            class="w-64 rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:scale-105"
-            onclick="openModal(this.src)"
-          />
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">
+            Menu Kami
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 text-lg">
+            Pilihan terbaik untuk mahasiswa dengan budget terbatas
+          </p>
+          <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        <!-- modal -->
-        <!-- Modal -->
-        <div
-          id="imageModal"
-          class="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 hidden"
-          onclick="closeModal()"
-        >
-          <img
-            id="modalImage"
-            class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg"
-          />
+        <!-- Menu Categories -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <button
+            class="menu-category-btn active bg-yellow-500 text-white px-6 py-2 rounded-full"
+            data-category="all"
+          >
+            <i class="fas fa-th mr-2"></i>Semua Menu
+          </button>
+          <button
+            class="menu-category-btn bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-2 rounded-full border border-gray-300 dark:border-gray-600"
+            data-category="minuman"
+          >
+            <i class="fas fa-coffee mr-2"></i>Minuman
+          </button>
+          <button
+            class="menu-category-btn bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-2 rounded-full border border-gray-300 dark:border-gray-600"
+            data-category="makanan"
+          >
+            <i class="fas fa-hamburger mr-2"></i>Makanan
+          </button>
+          <button
+            class="menu-category-btn bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-2 rounded-full border border-gray-300 dark:border-gray-600"
+            data-category="snack"
+          >
+            <i class="fas fa-cookie mr-2"></i>Snack
+          </button>
+        </div>
+
+        <!-- Menu Image with Enhanced Modal -->
+        <div class="text-center mb-12">
+          <div class="relative inline-block">
+            <img
+              src="assets/menu naiya.jpg"
+              alt="Menu Warkop"
+              class="w-80 md:w-96 rounded-2xl shadow-2xl cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-3xl card-hover"
+              onclick="openModal(this.src)"
+            />
+            <div
+              class="absolute -top-4 -right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse"
+            >
+              <i class="fas fa-fire mr-1"></i>HOT!
+            </div>
+          </div>
+          <p class="mt-4 text-gray-600 dark:text-gray-400">
+            <i class="fas fa-click mr-2"></i>Klik gambar untuk memperbesar
+          </p>
+        </div>
+
+        <!-- Quick Order Button -->
+        <div class="text-center">
+          <button
+            onclick="openQuickOrder()"
+            class="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            <i class="fas fa-rocket mr-2"></i>Pesan Cepat via WhatsApp
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Tentang -->
+    <!-- About Section -->
     <section
       id="about"
-      class="py-16 bg-yellow-100 dark:bg-gray-900 transition-colors duration-300"
+      class="py-20 bg-gradient-to-br from-white to-yellow-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
     >
-      <div class="container mx-auto px-4 text-center">
-        <h3
-          class="text-3xl font-bold text-yellow-900 dark:text-yellow-300 mb-6"
-        >
-          Tentang Kami
-        </h3>
-        <p class="max-w-2xl mx-auto">
-          Warkop Silih Asih berdiri sejak 2023 dan berlokasi di Sukabirus,
-          Telkom University. Kami hadir sebagai tempat makan dan ngopi yang
-          terjangkau untuk mahasiswa dan warga sekitar. Menyediakan berbagai
-          pilihan makanan dan minuman yang sederhana namun nikmat, cocok untuk
-          nongkrong, nugas, atau sekadar istirahat sejenak.
-        </p>
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">
+              Tentang Kami
+            </h2>
+            <div class="w-24 h-1 bg-yellow-500 mx-auto rounded-full"></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Story Content -->
+            <div class="space-y-6">
+              <div class="glass dark:glass-dark p-8 rounded-2xl shadow-xl">
+                <h3 class="text-2xl font-bold text-yellow-600 mb-4">
+                  <i class="fas fa-star mr-2"></i>Cerita Kami
+                </h3>
+                <p
+                  class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4"
+                >
+                  Warkop Silih Asih berdiri sejak 2023 dan berlokasi strategis
+                  di Sukabirus, dekat Telkom University. Kami hadir sebagai
+                  solusi untuk mahasiswa yang membutuhkan tempat makan dan ngopi
+                  yang terjangkau namun tetap berkualitas.
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  Dengan motto "Silih Asih" (saling mengasihi), kami berkomitmen
+                  menyediakan berbagai pilihan makanan dan minuman yang
+                  sederhana namun nikmat. Tempat yang perfect untuk nongkrong,
+                  mengerjakan tugas, atau sekadar istirahat sejenak dari
+                  rutinitas kampus.
+                </p>
+              </div>
+
+              <!-- Features -->
+              <div class="grid grid-cols-2 gap-4">
+                <div
+                  class="glass dark:glass-dark p-6 rounded-xl text-center card-hover"
+                >
+                  <i class="fas fa-wifi text-3xl text-yellow-500 mb-3"></i>
+                  <h4 class="font-semibold text-gray-800 dark:text-gray-200">
+                    WiFi Gratis
+                  </h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">
+                    Internet kencang untuk tugas
+                  </p>
+                </div>
+                <div
+                  class="glass dark:glass-dark p-6 rounded-xl text-center card-hover"
+                >
+                  <i class="fas fa-plug text-3xl text-yellow-500 mb-3"></i>
+                  <h4 class="font-semibold text-gray-800 dark:text-gray-200">
+                    Colokan Listrik
+                  </h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">
+                    Charging sepuasnya
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Values -->
+            <div class="space-y-6">
+              <div class="glass dark:glass-dark p-8 rounded-2xl shadow-xl">
+                <h3 class="text-2xl font-bold text-yellow-600 mb-6">
+                  <i class="fas fa-heart mr-2"></i>Nilai-Nilai Kami
+                </h3>
+                <div class="space-y-4">
+                  <div class="flex items-start space-x-4">
+                    <div
+                      class="bg-yellow-100 dark:bg-yellow-900 p-3 rounded-full"
+                    >
+                      <i class="fas fa-dollar-sign text-yellow-600"></i>
+                    </div>
+                    <div>
+                      <h4
+                        class="font-semibold text-gray-800 dark:text-gray-200"
+                      >
+                        Harga Mahasiswa
+                      </h4>
+                      <p class="text-gray-600 dark:text-gray-400 text-sm">
+                        Harga yang ramah di kantong mahasiswa
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <div
+                      class="bg-yellow-100 dark:bg-yellow-900 p-3 rounded-full"
+                    >
+                      <i class="fas fa-thumbs-up text-yellow-600"></i>
+                    </div>
+                    <div>
+                      <h4
+                        class="font-semibold text-gray-800 dark:text-gray-200"
+                      >
+                        Kualitas Terjamin
+                      </h4>
+                      <p class="text-gray-600 dark:text-gray-400 text-sm">
+                        Murah tapi tetap enak dan berkualitas
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <div
+                      class="bg-yellow-100 dark:bg-yellow-900 p-3 rounded-full"
+                    >
+                      <i class="fas fa-users text-yellow-600"></i>
+                    </div>
+                    <div>
+                      <h4
+                        class="font-semibold text-gray-800 dark:text-gray-200"
+                      >
+                        Suasana Hangat
+                      </h4>
+                      <p class="text-gray-600 dark:text-gray-400 text-sm">
+                        Seperti rumah kedua untuk mahasiswa
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Video Section -->
     <section
-      class="py-16 bg-yellow-50 dark:bg-gray-800 transition-colors duration-300"
+      class="py-20 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300"
     >
-      <div class="container mx-auto px-4 text-center">
-        <h3
-          class="text-3xl font-bold text-yellow-900 dark:text-yellow-300 mb-6"
-        >
-          Video Suasana Warkop
-        </h3>
-        <div class="relative w-full max-w-4xl mx-auto aspect-video">
-          <iframe
-            class="w-full h-full rounded shadow"
-            src="https://www.youtube.com/embed/9B6AxxYTw3A?start=551s?autoplay=1&mute=1&controls=1"
-            title="Video Suasana Warkop"
-            frameborder="0"
-            allow="autoplay; encrypted-media; fullscreen"
-            allowfullscreen
-          ></iframe>
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">
+            Suasana Warkop
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 text-lg">
+            Lihat bagaimana serunya suasana di Warkop Silih Asih
+          </p>
+          <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div
+            class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl"
+          >
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/9B6AxxYTw3A?start=551"
+              title="Video Suasana Warkop"
+              frameborder="0"
+              allow="autoplay; encrypted-media; fullscreen"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <p class="text-center mt-6 text-gray-600 dark:text-gray-400">
+            <i class="fas fa-play-circle mr-2"></i>Video suasana nyaman dan
+            ramai di Warkop Silih Asih
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- video -->
-    <!-- <section
-      class="py-16 bg-yellow-50 dark:bg-gray-700 transition-colors duration-300"
+    <!-- Testimonials Section -->
+    <section
+      class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300"
     >
-      <div class="container mx-auto px-4 text-center">
-        <h3
-          class="text-3xl font-bold text-yellow-900 dark:text-yellow-300 mb-6"
-        >
-          Video Suasana Warkop
-        </h3>
-        <div class="relative w-full max-w-4xl mx-auto">
-          <video
-            class="w-full max-w-full h-auto rounded shadow"
-            controls
-            autoplay
-            muted
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">
+            Kata Mereka
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 text-lg">
+            Testimoni dari mahasiswa yang sudah merasakan
+          </p>
+          <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div
+            class="glass dark:glass-dark p-6 rounded-2xl shadow-xl card-hover"
           >
-            <source src="/assets/warkop.mp4" type="video/mp4" />
-            Browser tidak mendukung pemutaran video.
-          </video>
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-user text-yellow-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 dark:text-gray-200">
+                  Andi - Mahasiswa IT
+                </h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 italic">
+              "Tempat paling enak buat ngerjain tugas. WiFi kencang, harga
+              mahasiswa banget!"
+            </p>
+          </div>
+
+          <div
+            class="glass dark:glass-dark p-6 rounded-2xl shadow-xl card-hover"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-user text-yellow-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 dark:text-gray-200">
+                  Sari - Mahasiswa DKV
+                </h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 italic">
+              "Kopinya enak, tempatnya cozy, perfect buat meeting sama
+              teman-teman!"
+            </p>
+          </div>
+
+          <div
+            class="glass dark:glass-dark p-6 rounded-2xl shadow-xl card-hover"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-full flex items-center justify-center mr-4"
+              >
+                <i class="fas fa-user text-yellow-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 dark:text-gray-200">
+                  Budi - Mahasiswa Bisnis
+                </h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 italic">
+              "Pelayanannya ramah, makanannya enak. Jadi langganan nih!"
+            </p>
+          </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
-    <!-- Kontak -->
+    <!-- Contact Section -->
     <section
       id="contact"
-      class="py-16 bg-yellow-50 dark:bg-gray-800 transition-colors duration-300"
+      class="py-20 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300"
     >
-      <div class="container mx-auto px-4 text-center">
-        <h3
-          class="text-3xl font-bold text-center text-yellow-900 dark:text-yellow-300 mb-6"
-        >
-          Kontak Kami
-        </h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-6">
-          Punya pertanyaan atau ingin pesan duluan? Klik tombol di bawah ini:
-        </p>
-        <a
-          href="https://api.whatsapp.com/send?phone=6282115543575&text=Halo👋%20Selamat%20datang%20di%20Warkop%20Silih%20Asih.☕🍞%20Mau%20Pesan%20apa%20hari%20ini?
-"
-          target="_blank"
-          class="inline-block bg-green-500 text-white py-3 px-6 rounded-full text-lg hover:bg-green-600 transition"
-        >
-          Chat via WhatsApp
-        </a>
-
-        <!-- instagram -->
-        <div class="mt-10 text-center">
-          <p class="text-gray-700 dark:text-gray-300 mb-6 text-2xl">
-            Social Media:
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">
+            Kontak Kami
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 text-lg">
+            Siap melayani Anda dari jam 08.00 - 22.00
           </p>
-          <a
-            href="https://www.instagram.com/warkop_silihasih?igsh=MXF3YnU0czl3cWF3bg=="
-            target="_blank"
-            class="inline-block bg-purple-500 text-white py-3 px-6 rounded-full text-lg hover:bg-pink-600 transition"
-          >
-            Instagram
-          </a>
+          <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        <!-- Google Maps Link -->
-        <div class="mt-10 text-center">
-          <h4
-            class="text-xl font-semibold text-yellow-900 dark:text-yellow-300 mb-4 text-center"
-          >
-            Temukan Kami di Google Maps
-          </h4>
-          <a
-            href="https://maps.app.goo.gl/7wr8UHh6n38uN4zg9"
-            target="_blank"
-            class="inline-block bg-red-500 text-white py-3 px-6 rounded-full text-lg hover:bg-pink-600 transition"
-          >
-            Lihat Lokasi Kami
-          </a>
+        <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <!-- Contact Info -->
+          <div class="space-y-8">
+            <div class="glass dark:glass-dark p-8 rounded-2xl shadow-xl">
+              <h3 class="text-2xl font-bold text-yellow-600 mb-6">
+                <i class="fas fa-map-marker-alt mr-2"></i>Informasi Kontak
+              </h3>
+
+              <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="bg-yellow-100 dark:bg-yellow-900 p-3 rounded-full"
+                  >
+                    <i class="fas fa-map-marker-alt text-yellow-600"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 dark:text-gray-200">
+                      Alamat
+                    </h4>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      Sukabirus, Telkom University
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="bg-yellow-100 dark:bg-yellow-900 p-3 rounded-full"
+                  >
+                    <i class="fas fa-clock text-yellow-600"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 dark:text-gray-200">
+                      Jam Buka
+                    </h4>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      08.00 - 22.00 WIB
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="bg-yellow-100 dark:bg-yellow-900 p-3 rounded-full"
+                  >
+                    <i class="fas fa-phone text-yellow-600"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 dark:text-gray-200">
+                      WhatsApp
+                    </h4>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      +62 821-1554-3575
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="glass dark:glass-dark p-8 rounded-2xl shadow-xl">
+              <h3 class="text-2xl font-bold text-yellow-600 mb-6">
+                <i class="fas fa-share-alt mr-2"></i>Temukan Kami
+              </h3>
+
+              <div class="flex justify-center space-x-5">
+                <a
+                  href="https://api.whatsapp.com/send?phone=6285813615356&text=Halo👋%20Selamat%20datang%20di%20Warkop%20Silih%20Asih.☕🍞%20Mau%20Pesan%20apa%20hari%20ini?"
+                  target="_blank"
+                >
+                  <img
+                    src="assets/whatsapp.png"
+                    alt="WhatsApp"
+                    class="w-12 h-12 hover:scale-110 transition-transform"
+                  />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/warkop_silihasih"
+                  target="_blank"
+                >
+                  <img
+                    src="assets/instagram.png"
+                    alt="Instagram"
+                    class="w-12 h-12 hover:scale-110 transition-transform"
+                  />
+                </a>
+
+                <a
+                  href="https://maps.app.goo.gl/7wr8UHh6n38uN4zg9"
+                  target="_blank"
+                >
+                  <img
+                    src="assets/google-maps.png"
+                    alt="Google Maps"
+                    class="w-12 h-12 hover:scale-110 transition-transform"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Order Form -->
+          <div class="glass dark:glass-dark p-8 rounded-2xl shadow-xl">
+            <h3 class="text-2xl font-bold text-yellow-600 mb-6">
+              <i class="fas fa-rocket mr-2"></i>Pesan Cepat
+            </h3>
+
+            <form id="quickOrderForm" class="space-y-4">
+              <div>
+                <label
+                  class="block text-gray-700 dark:text-gray-300 font-semibold mb-2"
+                >
+                  <i class="fas fa-user mr-2"></i>Nama
+                </label>
+                <input
+                  type="text"
+                  id="nama"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-all duration-300"
+                />
+              </div>
+
+              <div>
+                <label
+                  class="block text-gray-700 dark:text-gray-300 font-semibold mb-2"
+                >
+                  <i class="fas fa-utensils mr-2"></i>Pesanan
+                </label>
+                <textarea
+                  id="pesanan"
+                  required
+                  rows="3"
+                  placeholder="Contoh: Kopi Hitam 2x, Nasi Goreng 1x"
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-all duration-300"
+                ></textarea>
+              </div>
+
+              <div>
+                <label
+                  class="block text-gray-700 dark:text-gray-300 font-semibold mb-2"
+                >
+                  <i class="fas fa-map-marker-alt mr-2"></i>Alamat Pengiriman
+                  (Opsional)
+                </label>
+                <input
+                  type="text"
+                  id="antarKe"
+                  placeholder="Kosongkan jika makan di tempat"
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-all duration-300"
+                />
+              </div>
+
+              <div>
+                <label
+                  class="block text-gray-700 dark:text-gray-300 font-semibold mb-2"
+                >
+                  <i class="fas fa-sticky-note mr-2"></i>Catatan Tambahan
+                </label>
+                <textarea
+                  id="catatan"
+                  rows="2"
+                  placeholder="Tambahan permintaan khusus..."
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-all duration-300"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-4 px-6 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold"
+              >
+                <i class="fab fa-whatsapp mr-2"></i>Kirim Pesanan via WhatsApp
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- Form Pemesanan -->
-    <section
-      class="py-16 bg-yellow-50 dark:bg-gray-900 text-center animate-fadeIn"
-    >
-      <h3 class="text-3xl font-bold mb-6 text-yellow-800 dark:text-yellow-300">
-        Pesan Sekarang
-      </h3>
-      <form
-        class="mt-6 space-y-4 text-left max-w-md mx-auto"
-        onsubmit="sendOrder(event)"
-      >
-        <input
-          type="text"
-          id="nama"
-          placeholder="Nama"
-          class="w-full p-2 rounded bg-white dark:bg-gray-700 border"
-          required
-        />
-        <input
-          type="text"
-          id="pesanan"
-          placeholder="Pesanan"
-          class="w-full p-2 rounded bg-white dark:bg-gray-700 border"
-          required
-        />
-        <input
-          type="text"
-          id="antarKe"
-          placeholder="Antar Ke"
-          class="w-full p-2 rounded bg-white dark:bg-gray-700 border"
-          required
-        />
-        <input
-          type="text"
-          id="catatan"
-          placeholder="Catatan"
-          class="w-full p-2 rounded bg-white dark:bg-gray-700 border"
-        />
-        <button
-          type="submit"
-          class="bg-green-500 text-white py-2 px-4 rounded block text-center hover:bg-green-600 w-full"
-        >
-          Kirim via WhatsApp
-        </button>
-      </form>
     </section>
 
     <!-- Footer -->
     <footer
-      class="bg-yellow-800 dark:bg-black text-white text-center py-4 transition-colors duration-300"
+      class="bg-gradient-to-r from-yellow-800 to-yellow-900 text-white py-16"
     >
-      <p>&copy; 2025 Warkop Sili Asih.</p>
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <!-- Logo & Description -->
+          <div class="md:col-span-2">
+            <div class="flex items-center space-x-4 mb-6">
+              <img
+                src="assets/logo naiya.png"
+                alt="Logo"
+                class="w-16 h-16 rounded-full animate-float"
+              />
+              <div>
+                <h3 class="text-2xl font-bold">Warkop Silih Asih</h3>
+                <p class="text-yellow-200">Basecamp Mahasiswa</p>
+              </div>
+            </div>
+            <p class="text-yellow-100 mb-6 leading-relaxed">
+              Warkop yang berdiri sejak 2023 dengan komitmen menyediakan makanan
+              dan minuman berkualitas dengan harga yang terjangkau untuk
+              mahasiswa dan masyarakat sekitar.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://api.whatsapp.com/send?phone=6282115543575"
+                class="text-2xl hover:text-yellow-300 transition-colors"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/warkop_silihasih"
+                class="text-2xl hover:text-yellow-300 transition-colors"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://maps.app.goo.gl/7wr8UHh6n38uN4zg9"
+                class="text-2xl hover:text-yellow-300 transition-colors"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-xl font-bold mb-4 text-yellow-200">Menu Cepat</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#home"
+                  class="text-yellow-100 hover:text-white transition-colors"
+                  ><i class="fas fa-home mr-2"></i>Beranda</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#menu"
+                  class="text-yellow-100 hover:text-white transition-colors"
+                  ><i class="fas fa-utensils mr-2"></i>Menu</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-yellow-100 hover:text-white transition-colors"
+                  ><i class="fas fa-info-circle mr-2"></i>Tentang</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-yellow-100 hover:text-white transition-colors"
+                  ><i class="fas fa-phone mr-2"></i>Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-xl font-bold mb-4 text-yellow-200">Kontak</h4>
+            <div class="space-y-3 text-yellow-100">
+              <p>
+                <i class="fas fa-map-marker-alt mr-2"></i>Sukabirus, Telkom
+                University
+              </p>
+              <p><i class="fas fa-clock mr-2"></i>08.00 - 22.00 WIB</p>
+              <p><i class="fas fa-phone mr-2"></i>+62 821-1554-3575</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-yellow-600 my-8" />
+
+        <div class="text-center text-yellow-200">
+          <p>
+            &copy; 2024 Warkop Silih Asih. Dibuat dengan
+            <i class="fas fa-heart text-red-400"></i> untuk mahasiswa.
+          </p>
+        </div>
+      </div>
     </footer>
 
-    <!-- Dark Mode Script -->
+    <!-- Image Modal -->
+    <div
+      id="imageModal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm flex justify-center items-center z-50 hidden transition-all duration-300"
+      onclick="closeModal()"
+    >
+      <div class="relative max-w-[90vw] max-h-[90vh]">
+        <img
+          id="modalImage"
+          class="max-w-full max-h-full rounded-lg shadow-2xl"
+        />
+        <button
+          onclick="closeModal()"
+          class="absolute -top-4 -right-4 bg-red-500 text-white w-10 h-10 rounded-full hover:bg-red-600 transition-colors"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Order Modal -->
+    <div
+      id="quickOrderModal"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-50 hidden p-4 overflow-y-auto"
+    >
+      <div
+        class="bg-white dark:bg-gray-800 rounded-2xl p-8 max-w-md w-full shadow-2xl"
+      >
+        <div class="text-center mb-6">
+          <h3 class="text-2xl font-bold text-yellow-600 mb-2">Pesan Cepat</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Langsung ke WhatsApp untuk pemesanan
+          </p>
+        </div>
+
+        <div class="space-y-4 mb-6">
+          <button
+            onclick="sendQuickMessage('Kopi Hitam + Gorengan')"
+            class="w-full text-left p-4 border rounded-lg hover:bg-yellow-50 dark:hover:bg-gray-700 transition-colors"
+          >
+            <div class="font-semibold">☕ Paket Hemat</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">
+              Kopi Hitam + Gorengan
+            </div>
+          </button>
+
+          <button
+            onclick="sendQuickMessage('Nasi Goreng + Es Teh')"
+            class="w-full text-left p-4 border rounded-lg hover:bg-yellow-50 dark:hover:bg-gray-700 transition-colors"
+          >
+            <div class="font-semibold">🍛 Paket Kenyang</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">
+              Nasi Goreng + Es Teh
+            </div>
+          </button>
+
+          <button
+            onclick="sendQuickMessage('Kopi Susu + Roti Bakar')"
+            class="w-full text-left p-4 border rounded-lg hover:bg-yellow-50 dark:hover:bg-gray-700 transition-colors"
+          >
+            <div class="font-semibold">🥪 Paket Santai</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">
+              Kopi Susu + Roti Bakar
+            </div>
+          </button>
+        </div>
+
+        <button
+          onclick="closeQuickOrder()"
+          class="w-full bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-300 py-3 rounded-lg hover:bg-gray-400 transition-colors"
+        >
+          Tutup
+        </button>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-8 right-8 bg-yellow-500 hover:bg-yellow-600 text-white w-12 h-12 rounded-full shadow-lg transform transition-all duration-300 opacity-0 translate-y-16"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
     <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Dark mode toggle
       const toggleBtn = document.getElementById("darkToggle");
       const html = document.documentElement;
 
@@ -326,115 +1081,233 @@
           window.matchMedia("(prefers-color-scheme: dark)").matches)
       ) {
         html.classList.add("dark");
-        toggleBtn.textContent = "🌞";
       }
 
       toggleBtn.addEventListener("click", () => {
         html.classList.toggle("dark");
-        if (html.classList.contains("dark")) {
-          localStorage.setItem("theme", "dark");
-          toggleBtn.textContent = "🌞";
+        localStorage.setItem(
+          "theme",
+          html.classList.contains("dark") ? "dark" : "light"
+        );
+      });
+
+      // Mobile menu toggle
+      mobileMenuBtn.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.contains("hidden");
+
+        if (isHidden) {
+          mobileMenu.classList.remove("hidden", "-translate-y-full");
+          mobileMenu.classList.add("translate-y-0");
+          document.body.style.overflow = "hidden"; // opsional, untuk mencegah scroll saat menu terbuka
         } else {
-          localStorage.setItem("theme", "light");
-          toggleBtn.textContent = "🌙";
+          mobileMenu.classList.remove("translate-y-0");
+          mobileMenu.classList.add("-translate-y-full");
+          setTimeout(() => {
+            mobileMenu.classList.add("hidden");
+            document.body.style.overflow = "auto"; // aktifkan scroll kembali
+          }, 300); // tunggu animasi selesai
         }
       });
-      // form pemesanan
 
-      function sendOrder() {
-        event.preventDefault();
-        const name = document.getElementById("nama").value;
-        const order = document.getElementById("pesanan").value;
-        const address = document.getElementById("antarKe").value;
-        const notes = document.getElementById("catatan").value;
+      document.querySelectorAll("#mobileMenu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("translate-y-0");
+          mobileMenu.classList.add("-translate-y-full");
+          setTimeout(() => {
+            mobileMenu.classList.add("hidden");
+            document.body.style.overflow = "auto";
+          }, 300);
+        });
+      });
+      document.addEventListener("click", function (e) {
+        const isMenuOpen = !mobileMenu.classList.contains("hidden");
+        const clickedOutsideMenu = !mobileMenu.contains(e.target);
+        const clickedToggleButton = mobileMenuBtn.contains(e.target);
 
-        const greeting = `Halo! 👋
-Selamat datang di Warkop Silih Asih. ☕🍞
-Mau pesan apa hari ini?\n`;
+        if (isMenuOpen && clickedOutsideMenu && !clickedToggleButton) {
+          // Tutup menu
+          mobileMenu.classList.remove("translate-y-0");
+          mobileMenu.classList.add("-translate-y-full");
+          setTimeout(() => {
+            mobileMenu.classList.add("hidden");
+            document.body.style.overflow = "auto";
+          }, 300);
+        }
+      });
+      document.getElementById("scrollToMenu").addEventListener("click", () => {
+        const menuSection = document.getElementById("menu");
+        if (menuSection) {
+          menuSection.scrollIntoView({ behavior: "smooth" });
+        }
+      });
 
-        const orderDetails = `
-Nama: ${name}
-Pesanan: ${order}
-Alamat: ${address}
-Notes (Optional): ${notes}
+      // Customer counter animation
+      let customerCount = 0;
+      const targetCount = 500;
+      const customerElement = document.getElementById("happyCustomers");
 
-Kami siap melayani kamu dari jam 08.00 - 22.00 🕗`;
+      const customerInterval = setInterval(() => {
+        customerCount += Math.ceil(targetCount / 100);
+        if (customerCount >= targetCount) {
+          customerCount = targetCount;
+          clearInterval(customerInterval);
+        }
+        customerElement.textContent = customerCount + "+";
+      }, 50);
 
-        const finalMessage = `${greeting}${orderDetails}`;
+      // Menu category filtering (placeholder - would need actual menu items)
+      document.querySelectorAll(".menu-category-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          // Remove active class from all buttons
+          document.querySelectorAll(".menu-category-btn").forEach((b) => {
+            b.classList.remove("active", "bg-yellow-500", "text-white");
+            b.classList.add(
+              "bg-white",
+              "dark:bg-gray-700",
+              "text-gray-700",
+              "dark:text-gray-300",
+              "border",
+              "border-gray-300",
+              "dark:border-gray-600"
+            );
+          });
 
-        const url = `https://api.whatsapp.com/send?phone=6281316511411&text=${encodeURIComponent(
-          finalMessage
-        )}`;
-        document.querySelector("form").reset();
-        window.open(url, "_blank");
-      }
+          // Add active class to clicked button
+          this.classList.add("active", "bg-yellow-500", "text-white");
+          this.classList.remove(
+            "bg-white",
+            "dark:bg-gray-700",
+            "text-gray-700",
+            "dark:text-gray-300",
+            "border",
+            "border-gray-300",
+            "dark:border-gray-600"
+          );
+        });
+      });
 
-      //popup
+      // Image modal functions
       function openModal(src) {
         document.getElementById("modalImage").src = src;
         document.getElementById("imageModal").classList.remove("hidden");
-        document.addEventListener("keydown", escClose);
+        document.body.style.overflow = "hidden";
       }
 
       function closeModal() {
         document.getElementById("imageModal").classList.add("hidden");
-        document.removeEventListener("keydown", escClose);
+        document.body.style.overflow = "auto";
       }
 
-      function escClose(event) {
-        if (event.key === "Escape") {
-          closeModal();
-        }
+      // Quick order functions
+      function openQuickOrder() {
+        document.getElementById("quickOrderModal").classList.remove("hidden");
+        document.body.style.overflow = "hidden";
       }
+
+      function closeQuickOrder() {
+        document.getElementById("quickOrderModal").classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      function sendQuickMessage(order) {
+        const message = `Halo! 👋\nSelamat datang di Warkop Silih Asih. ☕🍞\n\nSaya mau pesan: ${order}\n\nMohon info harga dan ketersediaannya ya!`;
+        const url = `https://api.whatsapp.com/send?phone=6285813615356&text=${encodeURIComponent(
+          message
+        )}`;
+        window.open(url, "_blank");
+        closeQuickOrder();
+      }
+
+      // Order form submission
+      document
+        .getElementById("quickOrderForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("nama").value;
+          const order = document.getElementById("pesanan").value;
+          const address = document.getElementById("antarKe").value;
+          const notes = document.getElementById("catatan").value;
+
+          const greeting = `Halo! 👋\nSelamat datang di Warkop Silih Asih. ☕🍞\nMau pesan apa hari ini?\n\n`;
+
+          let orderDetails = `Nama: ${name}\nPesanan: ${order}`;
+          if (address) orderDetails += `\nAlamat: ${address}`;
+          if (notes) orderDetails += `\nCatatan: ${notes}`;
+
+          orderDetails += `\n\nKami siap melayani dari jam 08.00 - 22.00 🕗`;
+
+          const finalMessage = greeting + orderDetails;
+          const url = `https://api.whatsapp.com/send?phone=6285813615356&text=${encodeURIComponent(
+            finalMessage
+          )}`;
+
+          window.open(url, "_blank");
+          this.reset();
+        });
+
+      // Back to top button
+      const backToTopBtn = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.remove("opacity-0", "translate-y-16");
+          backToTopBtn.classList.add("opacity-100", "translate-y-0");
+        } else {
+          backToTopBtn.classList.add("opacity-0", "translate-y-16");
+          backToTopBtn.classList.remove("opacity-100", "translate-y-0");
+        }
+      });
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Navbar scroll effect
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 100) {
+          navbar.classList.add("shadow-xl");
+          navbar.classList.remove("shadow-lg");
+        } else {
+          navbar.classList.remove("shadow-xl");
+          navbar.classList.add("shadow-lg");
+        }
+      });
+
+      // Close modals with Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeModal();
+          closeQuickOrder();
+        }
+      });
+
+      // Animation on scroll (simple intersection observer)
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements for animation
+      document.querySelectorAll(".card-hover").forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(20px)";
+        el.style.transition = "all 0.6s ease";
+        observer.observe(el);
+      });
     </script>
   </body>
 </html>
-
-<!-- kalau mau pake youtube -->
-<!-- <section
-  class="py-16 bg-yellow-50 dark:bg-gray-700 transition-colors duration-300"
->
-  <div class="container mx-auto px-4 text-center">
-    <h3 class="text-3xl font-bold text-yellow-900 dark:text-yellow-300 mb-6">
-      Video Suasana Warkop
-    </h3>
-    <div class="relative w-full max-w-4xl mx-auto aspect-video">
-      <iframe
-        class="w-full h-full rounded shadow"
-        src="https://www.youtube.com/embed/Fg7WCAyBhrU?start=551s?autoplay=1&mute=1&controls=1"
-        title="Video Suasana Warkop"
-        frameborder="0"
-        allow="autoplay; encrypted-media; fullscreen"
-        allowfullscreen
-      ></iframe>
-    </div>
-  </div>
-</section> -->
-
-<!-- <section
-        class="py-16 bg-yellow-50 dark:bg-gray-700 transition-colors duration-300"
-      >
-        <div class="container mx-auto px-4 text-center">
-          <h3
-            class="text-3xl font-bold text-yellow-900 dark:text-yellow-300 mb-6"
-          >
-            Video Suasana Warkop
-          </h3>
-          <div class="relative w-full max-w-4xl mx-auto">
-            <video
-              class="w-full max-w-full h-auto rounded shadow"
-              controls
-              autoplay
-              muted
-            >
-              <source src="/assets/warkop.mp4" type="video/mp4" />
-              Browser tidak mendukung pemutaran video.
-            </video>
-          </div>
-        </div>
-      </section> -->
-
-<!--notes-->
-<!-- logo di head -->
-<!-- foto menu di section menu dan pop up -->
-<!-- instagram -->
