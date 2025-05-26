@@ -286,7 +286,7 @@
             </div>
             <div class="text-center">
               <div class="text-2xl md:text-3xl font-bold text-yellow-600">
-                08-22
+                08-00 WIB
               </div>
               <div class="text-sm text-gray-600">Jam Buka</div>
             </div>
@@ -305,82 +305,6 @@
           <div
             class="w-1 h-3 bg-yellow-600 rounded-full mt-2 animate-pulse"
           ></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section
-      id="menu"
-      class="py-20 bg-gradient-to-br from-yellow-50 to-orange-50 transition-colors duration-300"
-    >
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">
-            Menu Kami
-          </h2>
-          <p class="text-gray-600 text-lg">
-            Pilihan terbaik untuk mahasiswa dengan budget terbatas
-          </p>
-          <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4 rounded-full"></div>
-        </div>
-
-        <!-- Menu Categories -->
-        <div class="flex flex-wrap justify-center gap-4 mb-12">
-          <button
-            class="menu-category-btn active bg-yellow-500 text-white px-6 py-2 rounded-full"
-            data-category="all"
-          >
-            <i class="fas fa-th mr-2"></i>Semua Menu
-          </button>
-          <button
-            class="menu-category-btn bg-white text-gray-700 px-6 py-2 rounded-full border border-gray-300"
-            data-category="minuman"
-          >
-            <i class="fas fa-coffee mr-2"></i>Minuman
-          </button>
-          <button
-            class="menu-category-btn bg-white text-gray-700 px-6 py-2 rounded-full border border-gray-300"
-            data-category="makanan"
-          >
-            <i class="fas fa-hamburger mr-2"></i>Makanan
-          </button>
-          <button
-            class="menu-category-btn bg-white text-gray-700 px-6 py-2 rounded-full border border-gray-300"
-            data-category="snack"
-          >
-            <i class="fas fa-cookie mr-2"></i>Snack
-          </button>
-        </div>
-
-        <!-- Menu Image with Enhanced Modal -->
-        <div class="text-center mb-12">
-          <div class="relative inline-block">
-            <img
-              src="assets/menu naiya.jpg"
-              alt="Menu Warkop"
-              class="w-80 md:w-96 rounded-2xl shadow-2xl cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-3xl card-hover"
-              onclick="openModal(this.src)"
-            />
-            <div
-              class="absolute -top-4 -right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse"
-            >
-              <i class="fas fa-fire mr-1"></i>HOT!
-            </div>
-          </div>
-          <p class="mt-4 text-gray-600">
-            <i class="fas fa-click mr-2"></i>Klik gambar untuk memperbesar
-          </p>
-        </div>
-
-        <!-- Quick Order Button -->
-        <div class="text-center">
-          <button
-            onclick="openQuickOrder()"
-            class="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
-          >
-            <i class="fas fa-rocket mr-2"></i>Pesan Cepat via WhatsApp
-          </button>
         </div>
       </div>
     </section>
@@ -497,7 +421,8 @@
       class="py-20 bg-gradient-to-br from-yellow-50 to-orange-50 transition-colors duration-300"
     >
       <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
+        <!-- Heading -->
+        <div class="text-center mb-12">
           <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">
             Suasana Warkop
           </h2>
@@ -507,25 +432,22 @@
           <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        <div class="max-w-4xl mx-auto">
-          <div
-            class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl"
-          >
-            <iframe
-              class="w-full h-full"
-              src="https://www.youtube.com/embed/9B6AxxYTw3A?start=551"
-              title="Video Suasana Warkop"
-              frameborder="0"
-              allow="autoplay; encrypted-media; fullscreen"
-              allowfullscreen
-            >
-            </iframe>
-          </div>
-          <p class="text-center mt-6 text-gray-600">
-            <i class="fas fa-play-circle mr-2"></i>Video suasana nyaman dan
-            ramai di Warkop Silih Asih
-          </p>
+        <!-- Video Portrait -->
+        <div class="flex justify-center">
+          <video
+            id="warkopVideo"
+            class="rounded-2xl shadow-2xl w-[360px] h-[640px] object-contain"
+            src="assets/FINAL VIDEO WEBSITE.mp4"
+            controls
+            playsinline
+          ></video>
         </div>
+
+        <!-- Caption (tidak ikut fullscreen) -->
+        <p class="text-center mt-6 text-gray-600">
+          <i class="fas fa-play-circle mr-2"></i>Video suasana nyaman dan ramai
+          di Warkop Silih Asih
+        </p>
       </div>
     </section>
 
@@ -551,7 +473,7 @@
                 <i class="fas fa-user text-yellow-600"></i>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-800">Andi - Mahasiswa IT</h4>
+                <h4 class="font-semibold text-gray-800">Iyas - Mahasiswa IT</h4>
                 <div class="flex text-yellow-400">
                   <i class="fas fa-star"></i><i class="fas fa-star"></i
                   ><i class="fas fa-star"></i><i class="fas fa-star"></i
@@ -574,7 +496,7 @@
               </div>
               <div>
                 <h4 class="font-semibold text-gray-800">
-                  Sari - Mahasiswa DKV
+                  Dave - Mahasiswa DKV
                 </h4>
                 <div class="flex text-yellow-400">
                   <i class="fas fa-star"></i><i class="fas fa-star"></i
@@ -598,7 +520,7 @@
               </div>
               <div>
                 <h4 class="font-semibold text-gray-800">
-                  Budi - Mahasiswa Bisnis
+                  Ghania - Mahasiswa Bisnis
                 </h4>
                 <div class="flex text-yellow-400">
                   <i class="fas fa-star"></i><i class="fas fa-star"></i
@@ -614,6 +536,74 @@
         </div>
       </div>
     </section>
+
+    <!-- Menu Section -->
+    <section
+      id="menu"
+      class="py-20 bg-gradient-to-br from-yellow-50 to-orange-50 transition-colors duration-300"
+    >
+      <div class="container mx-auto px-4">
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">
+            Menu Kami
+          </h2>
+          <p class="text-gray-600 text-lg">
+            Pilihan terbaik untuk mahasiswa dengan budget terbatas
+          </p>
+          <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Menu Image Section -->
+        <div class="text-center mb-12">
+          <div class="relative inline-block">
+            <img
+              src="assets/menu naiya.jpg"
+              alt="Menu Warkop"
+              class="w-80 md:w-96 rounded-2xl shadow-2xl cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-3xl card-hover"
+              onclick="openModal(this.src)"
+            />
+
+            <!-- Badge "HOT!" -->
+            <div
+              class="absolute -top-4 -right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-pulse"
+            >
+              <i class="fas fa-fire mr-1"></i>HOT!
+            </div>
+
+            <!-- Caption -->
+            <p class="mt-4 text-gray-600">
+              <i class="fas fa-click mr-2"></i>Klik gambar untuk memperbesar
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div
+      id="imageModal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm flex justify-center items-center z-50 hidden"
+      onclick="closeModal()"
+    >
+      <div
+        class="relative p-4 max-w-[95vw] max-h-[95vh]"
+        onclick="event.stopPropagation()"
+      >
+        <div class="relative">
+          <img
+            id="modalImage"
+            class="w-full h-auto max-h-[90vh] rounded-lg shadow-2xl object-contain"
+          />
+          <button
+            onclick="closeModal()"
+            class="absolute top-2 right-2 bg-red-500 text-white w-8 h-8 md:w-10 md:h-10 rounded-full hover:bg-red-600 transition-colors flex items-center justify-center"
+          >
+            <i class="fas fa-times text-sm md:text-base"></i>
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- Contact Section -->
     <section
@@ -680,7 +670,7 @@
 
               <div class="flex justify-center space-x-5">
                 <a
-                  href="https://api.whatsapp.com/send?phone=6285813615356&text=Halo👋%20Selamat%20datang%20di%20Warkop%20Silih%20Asih.☕🍞%20Mau%20Pesan%20apa%20hari%20ini?"
+                  href="https://api.whatsapp.com/send?phone=6282115543575&text=Halo👋%20Selamat%20datang%20di%20Warkop%20Silih%20Asih.☕🍞%20Mau%20Pesan%20apa%20hari%20ini?"
                   target="_blank"
                 >
                   <img
@@ -808,26 +798,6 @@
               dan minuman berkualitas dengan harga yang terjangkau untuk
               mahasiswa dan masyarakat sekitar.
             </p>
-            <div class="flex space-x-4">
-              <a
-                href="https://api.whatsapp.com/send?phone=6282115543575"
-                class="text-2xl hover:text-yellow-300 transition-colors"
-              >
-                <i class="fab fa-whatsapp"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/warkop_silihasih"
-                class="text-2xl hover:text-yellow-300 transition-colors"
-              >
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a
-                href="https://maps.app.goo.gl/7wr8UHh6n38uN4zg9"
-                class="text-2xl hover:text-yellow-300 transition-colors"
-              >
-                <i class="fas fa-map-marker-alt"></i>
-              </a>
-            </div>
           </div>
 
           <!-- Quick Links -->
@@ -845,7 +815,7 @@
                 <a
                   href="#menu"
                   class="text-yellow-100 hover:text-white transition-colors"
-                  ><i class="fas fa-utensils mr-2"></i>Menu</a
+                  ><i class="fas fa-utensils mr-2"></i> Menu</a
                 >
               </li>
               <li>
@@ -870,10 +840,10 @@
             <h4 class="text-xl font-bold mb-4 text-yellow-200">Kontak</h4>
             <div class="space-y-3 text-yellow-100">
               <p>
-                <i class="fas fa-map-marker-alt mr-2"></i>Sukabirus, Telkom
+                <i class="fas fa-map-marker-alt mr-2"></i> Sukabirus, Telkom
                 University
               </p>
-              <p><i class="fas fa-clock mr-2"></i>08.00 - 22.00 WIB</p>
+              <p><i class="fas fa-clock mr-2"></i> 08.00 - 00.00 WIB</p>
               <p><i class="fas fa-phone mr-2"></i>+62 821-1554-3575</p>
             </div>
           </div>
@@ -883,78 +853,12 @@
 
         <div class="text-center text-yellow-200">
           <p>
-            &copy; 2024 Warkop Silih Asih. Dibuat dengan
+            &copy; 2025 Warkop Silih Asih. Dibuat dengan
             <i class="fas fa-heart text-red-400"></i> untuk mahasiswa.
           </p>
         </div>
       </div>
     </footer>
-
-    <!-- Image Modal -->
-    <div
-      id="imageModal"
-      class="fixed inset-0 bg-black/80 backdrop-blur-sm flex justify-center items-center z-50 hidden transition-all duration-300"
-      onclick="closeModal()"
-    >
-      <div class="relative max-w-[90vw] max-h-[90vh]">
-        <img
-          id="modalImage"
-          class="max-w-full max-h-full rounded-lg shadow-2xl"
-        />
-        <button
-          onclick="closeModal()"
-          class="absolute -top-4 -right-4 bg-red-500 text-white w-10 h-10 rounded-full hover:bg-red-600 transition-colors"
-        >
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Quick Order Modal -->
-    <div
-      id="quickOrderModal"
-      class="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-50 hidden p-4 overflow-y-auto"
-    >
-      <div class="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl">
-        <div class="text-center mb-6">
-          <h3 class="text-2xl font-bold text-yellow-600 mb-2">Pesan Cepat</h3>
-          <p class="text-gray-600">Langsung ke WhatsApp untuk pemesanan</p>
-        </div>
-
-        <div class="space-y-4 mb-6">
-          <button
-            onclick="sendQuickMessage('Kopi Hitam + Gorengan')"
-            class="w-full text-left p-4 border rounded-lg hover:bg-yellow-50 transition-colors"
-          >
-            <div class="font-semibold">☕ Paket Hemat</div>
-            <div class="text-sm text-gray-600">Kopi Hitam + Gorengan</div>
-          </button>
-
-          <button
-            onclick="sendQuickMessage('Nasi Goreng + Es Teh')"
-            class="w-full text-left p-4 border rounded-lg hover:bg-yellow-50 transition-colors"
-          >
-            <div class="font-semibold">🍛 Paket Kenyang</div>
-            <div class="text-sm text-gray-600">Nasi Goreng + Es Teh</div>
-          </button>
-
-          <button
-            onclick="sendQuickMessage('Kopi Susu + Roti Bakar')"
-            class="w-full text-left p-4 border rounded-lg hover:bg-yellow-50 transition-colors"
-          >
-            <div class="font-semibold">🥪 Paket Santai</div>
-            <div class="text-sm text-gray-600">Kopi Susu + Roti Bakar</div>
-          </button>
-        </div>
-
-        <button
-          onclick="closeQuickOrder()"
-          class="w-full bg-gray-300 text-gray-700 py-3 rounded-lg hover:bg-gray-400 transition-colors"
-        >
-          Tutup
-        </button>
-      </div>
-    </div>
 
     <!-- Back to Top Button -->
     <button
@@ -1100,7 +1004,7 @@
 
       function sendQuickMessage(order) {
         const message = `Halo! 👋\nSelamat datang di Warkop Silih Asih. ☕🍞\n\nSaya mau pesan: ${order}\n\nMohon info harga dan ketersediaannya ya!`;
-        const url = `https://api.whatsapp.com/send?phone=6285813615356&text=${encodeURIComponent(
+        const url = `https://api.whatsapp.com/send?phone=6282115543575&text=${encodeURIComponent(
           message
         )}`;
         window.open(url, "_blank");
@@ -1127,7 +1031,7 @@
           orderDetails += `\n\nKami siap melayani dari jam 08.00 - 22.00 🕗`;
 
           const finalMessage = greeting + orderDetails;
-          const url = `https://api.whatsapp.com/send?phone=6285813615356&text=${encodeURIComponent(
+          const url = `https://api.whatsapp.com/send?phone=6281316511411&text=${encodeURIComponent(
             finalMessage
           )}`;
 
